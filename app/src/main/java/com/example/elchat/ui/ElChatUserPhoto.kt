@@ -1,4 +1,4 @@
-package com.example.elchat
+package com.example.elchat.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border

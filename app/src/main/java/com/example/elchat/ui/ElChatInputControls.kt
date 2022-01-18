@@ -1,4 +1,4 @@
-package com.example.elchat
+package com.example.elchat.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -9,6 +9,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.elchat.ui.theme.ElChatTheme
@@ -18,9 +20,9 @@ import com.example.elchat.ui.theme.ElChatTheme
 fun ElChatSendButton(mvc: ()-> Unit,
                      modifier: Modifier = Modifier) {
     Button( { mvc() },
-        content = { Text("Send!!!!") }
+        content = { Text("Send!") }
     , shape = RoundedCornerShape(5.dp)
-    , modifier = modifier
+    , modifier = modifier.semantics { testTag="SendButton" }
     )
 }
 
@@ -47,7 +49,7 @@ fun ElChatChatInput(text: MutableState<String>, modifier: Modifier = Modifier) {
         TextField(
             value = text.value,
             onValueChange = { text.value = it },
-            modifier = modifier.fillMaxWidth()
+            modifier = modifier.fillMaxWidth().semantics { testTag="InputTextField" }
         )
         Icon(
             Icons.Outlined.PlayArrow, contentDescription = "",

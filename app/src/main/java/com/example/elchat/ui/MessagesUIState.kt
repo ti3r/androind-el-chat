@@ -1,4 +1,4 @@
-package com.example.elchat
+package com.example.elchat.ui
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.mutableStateListOf
