@@ -31,7 +31,6 @@ fun ElChatSendMessageBar(onSent: (text: String)-> Unit, modifier: Modifier = Mod
     var text = remember {
         mutableStateOf("")
     }
-    var mode by remember { mutableStateOf("Text")}
     Box(modifier = modifier.fillMaxWidth().padding(2.dp)) {
         ElChatChatInput(text, modifier.align(Alignment.TopStart).fillMaxWidth())
         ElChatSendButton({
